@@ -1,0 +1,262 @@
+/* Đặt nền giống trang chủ */
+body {
+    font-family: Arial,sans-serif;
+    background-color: #1B5E20;  /* Xanh lá đậm */
+    margin: 0;
+    padding: 0;
+    color: white;
+}
+
+/* Thanh điều hướng */
+header {
+    background-color: #1B5E20;  /* Xanh lá đậm hơn */
+    color: white;
+    padding: 15px;
+    display: flex;
+    align-items: center;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+}
+
+/* Nút quay về trang chủ */
+.back-btn {
+    color: white;
+    text-decoration: none;
+    font-size: 18px;
+    margin-right: 15px;
+    padding: 5px 10px;
+    border: 2px solid white;
+    border-radius: 5px;
+    transition: background 0.3s ease;
+}
+
+.back-btn:hover {
+    background-color: white;
+    color: #1B5E20;
+}
+
+/* Tiêu đề */
+h1 {
+    flex-grow: 1;
+    text-align: center;
+    font-size: 24px;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+}
+
+/* Khung nội dung chính */
+.fruit-detail {
+    max-width: 1500px;
+    margin: 20px auto;
+    background: #388E3C;  /* Xanh lá trung tính */
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.3);
+}
+
+/* Hình ảnh trái cây */
+.fruit-image img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 8px;
+    display: block;
+    margin: 0 auto;
+    border: 3px solid #FFD700;  /* Viền trắng */
+}
+.fruit-image img {
+    width: 100%;
+    max-width: 900px;
+    max-height: 400px;
+    transition: transform 0.3s ease-in-out;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.fruit-image img:hover {
+    transform: scale(1.1);
+}
+
+/* Các phần mô tả */
+.fruit-info h2 {
+    color: #FFD700; /* Màu vàng nổi bật */
+    border-bottom: 5px solid #FFD700;
+    padding-bottom: 5px;
+}
+
+.fruit-info p {
+    line-height: 1.5;
+    margin: 10px 0;
+    font-size: 19px;
+}
+.fruit-detail {
+    animation: fadeIn 0.5s ease-in-out;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(-10px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+/* Làm nổi bật tên trái cây */
+#fruit-name {
+    font-size: 28px;         /* Tăng kích thước chữ */
+    font-weight: bold;       /* In đậm */
+    color: #FFD700;          /* Màu vàng nổi bật */
+    text-transform: uppercase;
+    text-align: center;
+    padding: 10px 20px;
+    border: 3px solid #FFD700; /* Viền trắng */
+    display: inline-block;
+    background: rgba(255, 255, 255, 0.1); /* Nền mờ nhẹ */
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(255, 215, 0, 0.8); /* Hiệu ứng phát sáng */
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+/* Hiệu ứng khi di chuột vào */
+#fruit-name:hover {
+    transform: scale(1.1); /* Hiệu ứng phóng to */
+    box-shadow: 0 0 15px rgba(255, 215, 0, 1);
+}
+.fade-in {
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 0.8s ease, transform 0.8s ease;
+}
+
+.fade-in.show {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* Nút quay lại đầu trang */
+#back-to-top {
+    position: fixed;
+    bottom: 20px; /* Cách đáy trang 20px */
+    right: 20px; /* Cách bên phải 20px */
+    background-color: #1B5E20; /* Màu cam nhẹ (hoà hợp với màu xanh nhưng nổi bật hơn) */
+    color: white;
+    border: none;
+    border-radius: 50%;
+    font-size: 28px; /* Phóng to font chữ */
+    width: 60px;
+    height: 60px;
+    text-align: center;
+    line-height: 60px;
+    cursor: pointer;
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3); /* Tăng bóng đổ */
+    transition: all 0.3s ease; /* Thêm hiệu ứng chuyển động */
+    opacity: 0; /* Ẩn nút khi trang tải ban đầu */
+    visibility: hidden; /* Ẩn nút */
+}
+
+#back-to-top:hover {
+    background-color: #FF5733; /* Màu cam đậm hơn khi hover */
+    transform: scale(1.1); /* Hiệu ứng phóng to khi hover */
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.4); /* Tăng bóng đổ khi hover */
+}
+
+/* Khi nút hiển thị */
+#back-to-top.show {
+    opacity: 1; /* Hiển thị nút */
+    visibility: visible; /* Hiển thị nút */
+}
+
+/* Đổi dấu mũi tên */
+#back-to-top:before {
+    content: '\2191'; /* Mũi tên lên Unicode */
+    font-size: 30px;
+    line-height: 60px; /* Căn chỉnh mũi tên vào giữa nút */
+}
+
+@media screen and (min-width: 1024px) {
+    .header {
+        height: 80px;
+        background-color: #333;
+        color: white;
+    }
+
+    .content {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+    }
+/* Các phần mô tả */
+.fruit-info h2 {
+  font-size: 40px;
+    color: #FFD700; /* Màu vàng nổi bật */
+    border-bottom: 5px solid #FFD700;
+    padding-bottom: 5px;
+}
+
+.fruit-info p {
+    line-height: 1.5;
+    margin: 10px 0;
+    font-size: 32px;
+}
+.fruit-detail {
+    animation: fadeIn 0.5s ease-in-out;
+}
+/* Nút quay về trang chủ */
+.back-btn {
+    color: white;
+    text-decoration: none;
+    font-size: 40px;
+    margin-right: 25px;
+    padding: 5px 10px;
+    border: 3px solid white;
+    border-radius: 5px;
+    transition: background 0.3s ease;
+}
+/* Tiêu đề */
+#fruit-name {
+    flex-grow: 1;
+    text-align: center;
+    font-size: 70px;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+}
+/* Nút quay lại đầu trang */
+#back-to-top {
+    position: fixed;
+    bottom: 100px; /* Cách đáy trang 20px */
+    right: 120px; /* Cách bên phải 20px */
+    background-color: #1B5E20; /* Màu cam nhẹ (hoà hợp với màu xanh nhưng nổi bật hơn) */
+    color: white;
+    border: none;
+    border-radius: 50%;
+    font-size: 70px; /* Phóng to font chữ */
+    width: 150px;
+    height: 130px;
+    text-align: center;
+    line-height: 60px;
+    cursor: pointer;
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3); /* Tăng bóng đổ */
+    transition: all 0.3s ease; /* Thêm hiệu ứng chuyển động */
+    opacity: 0; /* Ẩn nút khi trang tải ban đầu */
+    visibility: hidden; /* Ẩn nút */
+}
+
+#back-to-top:hover {
+    background-color: #FF5733; /* Màu cam đậm hơn khi hover */
+    transform: scale(1.1); /* Hiệu ứng phóng to khi hover */
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.4); /* Tăng bóng đổ khi hover */
+}
+
+/* Khi nút hiển thị */
+#back-to-top.show {
+    opacity: 1; /* Hiển thị nút */
+    visibility: visible; /* Hiển thị nút */
+}
+
+/* Đổi dấu mũi tên */
+#back-to-top:before {
+    content: '\2191'; /* Mũi tên lên Unicode */
+    font-size: 30px;
+    line-height: 60px; /* Căn chỉnh mũi tên vào giữa nút */
+}
+}

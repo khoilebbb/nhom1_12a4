@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Chi tiết sản phẩm</title>
+  <link rel="stylesheet" href="chitietsp.css?v=2">
+</head>
+<body>
+
+  <!-- HEADER -->
+  <header>
+    <a href="shop.html" class="back-btn">⬅ Quay lại cửa hàng</a>
+    <h1>Chi tiết sản phẩm</h1>
+    <div id="user-info">
+      <span id="user-name"></span>
+      <button id="logout-btn" style="display: none;">Đăng xuất</button>
+      <a id="login-btn" href="login.html">Đăng nhập</a>
+    </div>
+  </header>
+  
+  <hr class="header-divider">
+
+  <!-- MAIN -->
+  <main class="product-detail">
+<section class="product-slider">
+  <div class="slider">
+    <div id="slider-container" class="slides">
+      <div class="slide">
+        <img src="2-saurieng1.jpg" alt="Ảnh 1">
+      </div>
+      <div class="slide">
+        <img src="2-saurieng2.jpg" alt="Ảnh 2">
+      </div>
+      <div class="slide">
+        <img src="link_anh_3.jpg" alt="Ảnh 3">
+      </div>
+    </div>
+    <div class="arrow prev" onclick="prevSlide()">❮</div>
+    <div class="arrow next" onclick="nextSlide()">❯</div>
+  </div>
+</section>
+
+    <!-- Thông tin sản phẩm -->
+    <section class="product-info">
+      <h2 id="product-name">Tên sản phẩm</h2>
+      <p id="product-desc" class="description">
+        Mô tả sản phẩm... <span id="toggle-desc" class="toggle-btn">Xem thêm</span>
+      </p>
+      <p id="product-price"><strong>Giá:</strong> 0đ</p>
+      <div class="action-buttons">
+        <button id="add-to-wishlist" class="wishlist-btn">❤️ Thêm vào yêu thích</button>
+        <a id="buy-product" class="buy-btn" target="_blank" href="#">🛒 Mua sản phẩm</a>
+      </div>
+    </section>
+  </main>
+
+  <script src="chitietsp.js?v=2"></script>
+</body>
+</html>

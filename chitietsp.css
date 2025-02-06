@@ -1,0 +1,252 @@
+/* Reset & cơ bản */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: Arial, sans-serif;
+  background-color: white;
+  color: #333;
+}
+
+/* HEADER */
+header {
+  background-color: #006400; /* Xanh lá */
+  color: white;
+  padding: 15px 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+header h1 {
+  font-size: 36px;
+  font-weight: bold;
+}
+
+.back-btn, #login-btn, #logout-btn {
+  background-color: #32cd32; /* Xanh lá sáng */
+  color: white;
+  padding: 10px 15px;
+  text-decoration: none;
+  border-radius: 5px;
+  transition: 0.3s;
+  border: none;
+  cursor: pointer;
+}
+
+.back-btn:hover, #login-btn:hover, #logout-btn:hover {
+  background-color: #228b22;
+}
+
+.header-divider {
+  border: 0;
+  height: 8px;
+  background-color: #e1e1e1;
+  margin-top: 10px;
+}
+
+/* MAIN: Chi tiết sản phẩm */
+.product-detail {
+  max-width: 900px;
+  margin: 20px auto;
+  padding: 20px;
+}
+
+
+
+
+
+/* Ẩn các nút radio */
+input[type="radio"] {
+  display: none;
+}
+
+/* Nút chuyển slide dạng chấm tròn */
+.navigation {
+  position: absolute;
+  bottom: 10px;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+}
+
+.nav-btn {
+  width: 10px;
+  height: 10px;
+  background: #bbb;
+  margin: 5px;
+  border-radius: 50%;
+  cursor: pointer;
+  transition: background 0.3s;
+}
+
+.nav-btn:hover {
+  background: #333;
+}
+
+/* Điều khiển slide bằng radio */
+#slide1:checked ~ .slide:nth-child(2),
+#slide2:checked ~ .slide:nth-child(4),
+#slide3:checked ~ .slide:nth-child(6) {
+  transform: translateX(calc(-100% * (var(--i, 0))));
+}
+
+/* Nút mũi tên điều hướng */
+.arrow {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  font-size: 30px;
+  color: white;
+  background: rgba(0, 0, 0, 0.5);
+  padding: 10px;
+  cursor: pointer;
+  user-select: none;
+  border-radius: 50%;
+}
+
+.prev {
+  left: 10px;
+}
+
+.next {
+  right: 10px;
+}
+
+/* THÔNG TIN SẢN PHẨM */
+.product-info {
+  background-color: #fff;
+  padding: 20px;
+  border: 1px solid #ddd;
+  border-radius: 10px;
+  margin-bottom: 30px;
+}
+
+.product-info h2 {
+  font-size: 32px;
+  color: #28a745;
+  margin-bottom: 15px;
+}
+
+.description {
+  font-size: 18px;
+  color: #555;
+  line-height: 1.6;
+  margin-bottom: 15px;
+}
+
+.toggle-btn {
+  color: #006400;
+  cursor: pointer;
+  font-weight: bold;
+  margin-left: 5px;
+}
+
+.product-price {
+  font-size: 24px;
+  font-weight: bold;
+  color: #f39c12;
+  margin-top: 15px;
+}
+
+.action-buttons {
+  margin-top: 20px;
+  display: flex;
+  gap: 20px;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.wishlist-btn {
+  background-color: #e74c3c;
+  color: #fff;
+  border: none;
+  padding: 12px 20px;
+  font-size: 18px;
+  cursor: pointer;
+  border-radius: 8px;
+  transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.wishlist-btn:hover {
+  background-color: #c0392b;
+  transform: scale(1.05);
+}
+
+.buy-btn {
+  background-color: #ffcc00;
+  color: #000;
+  text-decoration: none;
+  padding: 12px 20px;
+  font-size: 18px;
+  border-radius: 8px;
+  transition: background-color 0.3s ease, transform 0.3s ease;
+  display: inline-block;
+}
+
+.buy-btn:hover {
+  background-color: #ff9900;
+  transform: scale(1.05);
+}
+
+/* Slider container */
+.slider {
+  position: relative;
+  width: 100%;
+  max-width: 400px;   /* Điều chỉnh kích thước phù hợp */
+  height: 300px;      /* Điều chỉnh chiều cao phù hợp */
+  margin: auto;
+  overflow: hidden;
+  border: 2px solid #333;
+  border-radius: 10px;
+}
+
+/* Slide container */
+.slides {
+  display: flex;
+  width: 300%;        /* Với 3 slide, tổng chiều rộng = 300% */
+  transition: transform 0.5s ease-in-out;
+}
+
+/* Mỗi slide */
+.slide {
+  width: 100%;
+  flex-shrink: 0;
+}
+
+/* Hình ảnh trong slide */
+.slide img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* Nút mũi tên */
+.arrow {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background-color: rgba(0, 0, 0, 0.5);
+  color: white;
+  border: none;
+  padding: 10px;
+  font-size: 24px;
+  cursor: pointer;
+  border-radius: 50%;
+  z-index: 2;
+}
+
+.prev {
+  left: 10px;
+}
+
+.next {
+  right: 10px;
+}
+
+
+

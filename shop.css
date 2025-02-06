@@ -1,0 +1,169 @@
+/* Reset mặc định */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, sans-serif;
+}
+
+/* Màu nền tổng thể */
+body {
+    background-color: #006600;
+    color: #333;
+}
+
+/* Header */
+header {
+    background-color: #004d00; /* Xanh đậm giống trang chủ */
+    color: white;
+    padding: 15px 20px;
+    text-align: center;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+
+/* Navigation */
+nav {
+    background: #006600; /* Xanh tối hơn */
+    padding: 10px;
+    text-align: center;
+}
+
+.nav-links {
+    list-style: none;
+    display: flex;
+    justify-content: center;
+}
+
+.nav-links li {
+    margin: 0 15px;
+}
+
+.nav-links a {
+    color: white;
+    text-decoration: none;
+    font-size: 18px;
+}
+
+/* Grid sản phẩm */
+.product-grid {
+    display: grid;
+    gap: 15px;
+    padding: 20px;
+}
+
+/* Dành cho PC */
+@media (min-width: 768px) {
+    .product-grid {
+        grid-template-columns: repeat(3, 1fr);
+    }
+}
+
+/* Dành cho điện thoại */
+@media (max-width: 767px) {
+    .product-grid {
+        grid-template-columns: repeat(1, 1fr);
+    }
+}
+
+/* Sản phẩm */
+.product {
+    background: white;
+    border-radius: 10px;
+    padding: 15px;
+    text-align: center;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s;
+    margin-top: 20px;
+}
+
+.product:hover {
+    transform: scale(1.05);
+}
+
+.product img {
+    width: 100%;
+    border-radius: 10px;
+}
+
+.product h3 {
+    margin: 10px 0;
+    color: #004d00;
+}
+
+.product p {
+    font-size: 16px;
+    margin-bottom: 10px;
+}
+
+/* Nút */
+.btn {
+    background: orange;
+    color: white;
+    padding: 10px 15px;
+    border-radius: 5px;
+    border: none;
+    cursor: pointer;
+}
+
+.btn:hover {
+    background: #e69500;
+}
+
+/* Footer */
+footer {
+    background: #003300;
+    color: white;
+    text-align: center;
+    padding: 15px;
+    margin-top: 20px;
+}
+
+.support-btn {
+    position: fixed;
+    bottom: 70px; /* Điều chỉnh vị trí so với nút quay lại đầu trang */
+    right: 20px;
+    background-color: #ff6600;
+    color: white;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 24px;
+    text-decoration: none;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+    transition: transform 0.3s ease, background-color 0.3s;
+}
+
+.support-btn:hover {
+    background-color: #e65c00;
+    transform: scale(1.1);
+}
+.add-to-cart {
+    background-color: #ff6600; /* Màu cam nổi bật */
+    color: white; /* Chữ màu trắng */
+    font-size: 14px; /* Kích thước chữ */
+    font-weight: bold; /* In đậm chữ */
+    padding: 12px 20px; /* Khoảng cách bên trong */
+    border: none; /* Không có viền */
+    border-radius: 8px; /* Bo tròn góc */
+    cursor: pointer; /* Hiển thị dạng bàn tay khi rê chuột */
+    transition: background-color 0.3s ease, transform 0.2s ease;
+    box-shadow: 2px 4px 6px rgba(0, 0, 0, 0.2); /* Đổ bóng */
+}
+
+/* Hiệu ứng khi rê chuột vào nút */
+.add-to-cart:hover {
+    background-color: #ff4500; /* Màu cam đậm hơn */
+    transform: scale(1.05); /* Phóng to nhẹ */
+}
+
+/* Hiệu ứng khi nhấn vào */
+.add-to-cart:active {
+    background-color: #cc3700; /* Màu cam tối hơn */
+    transform: scale(0.95); /* Thu nhỏ nhẹ khi bấm */
+}

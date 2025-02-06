@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Đặc sản trái cây Bến Tre</title>
+    <link rel="stylesheet" href="style_menu.css">
+    <link rel="stylesheet" href="trangchu.css">
+    <link rel="stylesheet" href="shop.css">
+</head>
+<body>
+  
+    <header>
+        <div class="header-top">
+            <h1>Cửa hàng trái cây</h1>
+        </div>
+        <div class="header-bottom">
+            <div class="search-login">
+                <input type="text" placeholder="Tìm kiếm..." class="search-bar">
+                <div id="user-status">
+                    <a href="login.html" id="login-btn" class="login-btn">Đăng nhập</a>
+                    <span id="username-display" style="display: none; font-weight: bold;"></span>
+                    <button id="logout-btn" style="display: none;">Đăng xuất</button>
+                </div>
+            </div>
+            <nav class="menu">
+                <ul class="menu-list">
+                    <li><a href="index.html">Trang chủ</a></li>
+                    <li><a href="wishlist.html">Yêu thích</a></li>
+                    <li><a href="#shop">Cửa hàng</a></li>
+                </ul>
+                <button class="menu-toggle">≡</button>
+            </nav>
+        </div>
+    </header>
+    
+    <main>
+        <section class="product-grid">
+            <div class="product">
+                <img src="Images2/1.jpg" alt="Dừa Xiêm Xanh">
+                <h3>Dừa Xiêm Xanh</h3>
+                <p>Giá: 25.000đ</p>
+                <a href="chitietsp.html" class="btn detail-btn" data-name="Dừa Xiêm Xanh" 
+                data-price="25.000đ" data-img="Images2/1.jpg" 
+                data-desc="Dừa Xiêm Xanh ngọt thanh, giải khát tuyệt vời. Đặc sản Bến Tre!">Xem chi tiết</a>
+            </div>
+            
+             <div class="product">
+                <img src="Images2/1.jpg" alt="Dừa Xiêm Xanh">
+                <h3>Dừa Xiêm Xanh</h3>
+                <p>Giá: 25.000đ</p>
+                <a href="chitietsp.html" class="btn detail-btn" data-name="Dừa Xiêm Xanh" 
+                data-price="25.000đ" data-img="Images2/1.jpg" 
+                data-desc="Dừa Xiêm Xanh ngọt thanh, giải khát tuyệt vời. Đặc sản Bến Tre!">Xem chi tiết</a>
+            </div>
+            <!-- Thêm các sản phẩm khác -->
+        </section>
+    </main>
+
+    <div class="mobile-menu-overlay" id="mobileMenu">
+        <div class="mobile-menu-content">
+            <ul>
+                <li><a href="index.html">Trang chủ</a></li>
+                <li><a href="wishlist.html">Yêu thích</a></li>
+                <li><a href="#shop">Cửa hàng</a></li>
+            </ul>
+            <p>¤ Bến Tre, miền đất của những vườn cây trĩu quả...</p>
+            <button class="close-menu">Đóng</button>
+        </div>
+    </div>
+
+    <a href="hotro.html" class="support-btn" title="Hỗ trợ khách hàng">📞</a>
+    <footer class="footer">
+        <p>&copy; 2025 Đặc sản Trái cây Bến Tre. Tất cả quyền được bảo lưu.</p>
+    </footer>
+
+    <script src="script_menu.js"></script>
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            const detailButtons = document.querySelectorAll(".detail-btn");
+
+            detailButtons.forEach(button => {
+                button.addEventListener("click", function () {
+                    let productData = {
+                        name: this.getAttribute("data-name"),
+                        price: this.getAttribute("data-price"),
+                        img: this.getAttribute("data-img"),
+                        desc: this.getAttribute("data-desc")
+                    };
+
+                    localStorage.setItem("selectedProduct", JSON.stringify(productData));
+
+                    window.location.href = "chitietsp.html"; // Chuyển hướng đến trang chi tiết
+                });
+            });
+        });
+    </script>
+</body>
+</html>

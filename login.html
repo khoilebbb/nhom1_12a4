@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Đăng Nhập / Đăng Ký</title>
+    <link rel="stylesheet" href="login.css">
+</head>
+<body>
+  
+<div class="container">
+    <h2>Chào mừng bạn!</h2>
+    
+    <!-- Tabs Chuyển Đổi -->
+    <div class="tabs">
+        <button class="tab-button active" onclick="showForm('login')">Đăng Nhập</button>
+        <button class="tab-button" onclick="showForm('register')">Đăng Ký</button>
+    </div>
+
+    <!-- Form Đăng Nhập -->
+    <form id="login-form">
+        <input type="text" id="login-username" placeholder="Tên đăng nhập" required>
+        <input type="password" id="login-password" placeholder="Mật khẩu" required>
+        <button type="submit">Đăng Nhập</button>
+    </form>
+
+    <!-- Form Đăng Ký -->
+    <form id="register-form" class="hidden">
+        <input type="text" id="register-username" placeholder="Tên đăng ký" required>
+        <input type="password" id="register-password" placeholder="Mật khẩu" required>
+        <button type="submit">Đăng Ký</button>
+    </form>
+
+    <!-- Nút quay về trang chủ -->
+    <a href="../index.html" class="back-home">← Quay về Trang Chủ</a>
+</div>
+
+<script src="login.js"></script>
+</body>
+</html>

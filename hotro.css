@@ -1,0 +1,119 @@
+/* Reset mặc định */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, sans-serif;
+}
+
+/* Màu nền và căn chỉnh tổng thể */
+body {
+    background-color: #f8f9fa;
+    color: #333;
+}
+
+/* Header */
+header {
+    background: #004d00;
+    color: white;
+    padding: 15px;
+    text-align: center;
+    font-size: 24px;
+}
+
+/* Tiêu đề chính */
+h1 {
+    text-align: center;
+    margin: 20px 0;
+    color: #004d00;
+}
+
+/* 📌 PHẦN FAQ (Câu hỏi thường gặp) */
+.faq-section {
+    width: 90%;
+    max-width: 800px;
+    margin: auto;
+    background: white;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* Câu hỏi */
+.faq-question {
+    font-weight: bold;
+    cursor: pointer;
+    padding: 10px;
+    border-bottom: 1px solid #ddd;
+    transition: background 0.3s;
+}
+
+.faq-question:hover {
+    background: #e6f2e6;
+}
+
+/* Câu trả lời (Ẩn ban đầu) */
+.faq-answer {
+    display: none;
+    padding: 10px;
+    color: #555;
+}
+
+/* 📌 PHẦN FORM LIÊN HỆ */
+.contact-section {
+    width: 90%;
+    max-width: 600px;
+    margin: 30px auto;
+    background: white;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* Tiêu đề Form */
+.contact-section h2 {
+    text-align: center;
+    color: #004d00;
+}
+
+/* Ô nhập */
+input, textarea {
+    width: 100%;
+    padding: 10px;
+    margin: 10px 0;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+/* Nút gửi */
+.contact-btn {
+    background: #ff6600;
+    color: white;
+    padding: 20px;
+    border: none;
+    width: 100%;
+    cursor: pointer;
+    font-size: 18px;
+    border-radius: 5px;
+}
+
+.contact-btn:hover {
+    background: #e65c00;
+}
+
+
+/* 📌 FOOTER */
+footer {
+    background: #003300;
+    color: white;
+    text-align: center;
+    padding: 15px;
+    margin-top: 20px;
+}
+
+/* 📌 RESPONSIVE */
+@media (min-width: 768px) {
+    .faq-section, .contact-section {
+        width: 70%;
+    }
+}
