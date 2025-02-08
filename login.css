@@ -15,6 +15,11 @@ body {
 .container {
     width: 400px;
     background: rgba(255, 255, 255, 0.9);
+    
+    background: rgba(255, 255, 255, 0.3); /* Độ trong suốt nhẹ */
+        backdrop-filter: blur(100px); /* Hiệu ứng làm mờ */
+    
+    
     padding: 20px;
     border-radius: 10px;
     box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
@@ -68,7 +73,6 @@ input {
     border: 1px solid #ddd;
     border-radius: 5px;
 }
-
 button {
     padding: 12px;
     background: #4CAF50;
@@ -100,3 +104,132 @@ button:hover {
 .back-home:hover {
     color: #4CAF50;
 }
+
+/* ========================== */
+/* Cấu hình tổng thể cho PC   */
+/* ========================== */
+@media screen and (min-width: 1024px) {
+    body {
+        font-family: 'Arial', sans-serif;
+        margin: 0;
+        padding: 0;
+        background: url('Images/login.jpg') no-repeat center center/cover;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+    }
+
+    /* Hộp chứa đăng nhập/đăng ký */
+    .container {
+        width: 1200px; /* Tăng chiều rộng cho PC */
+        background: rgba(255, 255, 255, 0.95); /* Nền trắng đậm hơn */
+        
+        
+            background: rgba(255, 255, 255, 0.3); /* Độ trong suốt nhẹ */
+        backdrop-filter: blur(100px); /* Hiệu ứng làm mờ */
+        
+        padding: 30px; /* Tăng padding để nội dung thoáng hơn */
+        border-radius: 12px; /* Bo tròn nhẹ hơn cho sự cứng cáp */
+        box-shadow: 0px 8px 20px rgba(0, 0, 0, 0.3); /* Tăng hiệu ứng bóng */
+        text-align: center;
+        animation: fadeIn 0.8s ease-in-out; /* Giảm thời gian hiệu ứng */
+        border: 2px solid #4CAF50; /* Thêm viền để tạo sự nổi bật */
+    }
+
+    /* Tiêu đề */
+    h2 {
+        color: #2c3e50;
+        font-size:48px; /* Tăng kích thước font */
+        margin-bottom: 20px;
+        text-transform: uppercase; /* Chữ in hoa để nổi bật hơn */
+        letter-spacing: 1px; /* Tăng khoảng cách giữa các chữ */
+    }
+
+    /* Tabs chuyển đổi */
+    .tabs {
+        display: flex;
+        justify-content: space-between;
+        margin-bottom: 20px;
+        border: 2px solid #4CAF50; /* Thêm viền để phân biệt rõ */
+        border-radius: 8px;
+        overflow: hidden; /* Ẩn phần tràn viền */
+    }
+
+    .tab-button {
+        flex: 1;
+        padding: 25px; /* Tăng độ lớn của nút */
+        background: #ddd;
+        border: none;
+        cursor: pointer;
+        transition: background 0.3s ease, transform 0.2s ease;
+        font-weight: bold;
+        font-size: 26px;
+    }
+
+    .tab-button:hover {
+        background: #c0e4c0; /* Hiệu ứng hover */
+        transform: scale(1.02); /* Nhẹ nhàng phóng to khi hover */
+    }
+
+    .tab-button.active {
+        background: #4CAF50;
+        color: white;
+    }
+
+    /* Form đăng nhập/đăng ký */
+    form {
+        display: flex;
+        flex-direction: column;
+        gap: 15px; /* Tạo khoảng cách giữa các ô input */
+    }
+
+    input {
+        padding: 40px; /* Tăng kích thước padding */
+        margin: 8px 0;
+        border: 2px solid #bbb; /* Đậm hơn để rõ nét */
+        border-radius: 8px; /* Bo tròn nhẹ */
+        font-size: 30px; /* Tăng kích thước chữ */
+        transition: border-color 0.3s ease;
+    }
+
+    input:focus {
+        border-color: #4CAF50; /* Đổi màu viền khi nhập liệu */
+        outline: none; /* Bỏ viền mặc định của trình duyệt */
+    }
+
+    /* Nút đăng nhập/đăng ký */
+    button {
+        padding: 20px;
+        background: #4CAF50;
+        color: white;
+        border: none;
+        cursor: pointer;
+        border-radius: 8px;
+        font-size: 20px;
+        transition: background 0.3s, transform 0.2s;
+        font-weight: bold;
+    }
+
+    button:hover {
+        background: #45a049;
+        transform: scale(1.03); /* Nhấn mạnh hiệu ứng hover */
+    }
+
+    /* Nút quay về */
+    .back-home {
+        display: block;
+        margin-top: 15px;
+        text-decoration: none;
+        color: #555;
+        font-size: 30px;
+        transition: color 0.3s ease;
+    }
+
+    .back-home:hover {
+        color: #4CAF50;
+        font-weight: bold;
+    }
+}
+
+

@@ -91,4 +91,79 @@ body {
     left: 0; /* Canh trái */
     width: 100%; /* Chiều rộng đầy đủ */
 }
+/* ============================ */
+/* Phong cách cho màn hình lớn  */
+/* ============================ */
+@media screen and (min-width: 1024px) {
+  .menu {
+    display: block; /* Hiển thị menu trên PC */
+  }
+  /* Kích thước font chữ và căn chỉnh cho footer */
+.footer {
+    background-color: #006600;
+    padding: 20px;
+    color: white;
+    text-align: center;
+    font-size: 40px; /* Thay đổi kích thước chữ trong footer */
+}
+.main-content {
+    height: 50vh; /* Tăng chiều cao cho phần nội dung */
+    margin-top: 0; /* Loại bỏ khoảng cách trên */
+}
 
+.main-content p {
+    font-size: 3.0rem; /* Làm chữ lớn hơn trên màn hình PC */
+    color: #006400;
+    font-weight: bold;
+    text-transform: uppercase;
+    padding: 55px;
+    border: 4px solid #006400;
+    border-radius: 50px; /* Viền tròn hơn */
+    background-color: #ffffff;
+    box-shadow: 0px 6px 25px rgba(0, 0, 0, 0.2); /* Bóng mờ đẹp hơn */
+}
+.fruit-list {
+    flex-direction: row; /* Chuyển từ cột sang hàng trên PC */
+    flex-wrap: wrap; /* Cho phép cuộn các phần tử xuống hàng nếu cần */
+    gap: 30px;
+    margin-top: 50px; /* Tăng khoảng cách từ phần trên */
+}
+
+.fruit-row {
+   /* Căn trái cho các phần tử */
+    width: 125%;
+    gap: 100px; /* Tăng khoảng cách giữa các trái cây */
+}
+.fruit-item {
+    width: 700px; /* Giảm chiều rộng của mỗi trái cây để vừa với màn hình */
+    text-align: center;
+    border: 10px solid #006400;
+    border-radius: 52px; /* Viền tròn hơn */
+    padding: 15px;
+    background-color: #ffffff;
+    box-shadow: 0px 6px 12px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease;
+    margin-bottom: 30px;
+}
+
+/* Hiệu ứng hover */
+.fruit-item:hover {
+    transform: scale(1.1); /* Phóng to hơn khi hover */
+}
+.fruit-image {
+    width: 100%;
+    max-width: 470px; /* Giới hạn kích thước hình ảnh */
+    height: auto;
+    border-bottom: 15px solid #006400;
+    margin-bottom: 15px;
+    border-radius: 30px; /* Viền mềm mại */
+}
+.fruit-name {
+    font-size: 3rem; /* Tăng kích thước chữ */
+    font-weight: bold;
+    color: #006400;
+    text-transform: capitalize;
+    padding-top: 15px;
+    text-align: center;
+}
+}

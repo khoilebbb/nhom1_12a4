@@ -56,23 +56,29 @@ document.addEventListener("DOMContentLoaded", function () {
 });
 
 document.addEventListener("DOMContentLoaded", function () {
-    const relatedLinks = document.querySelectorAll(".related-link");
+  let currentSlide = 0;
+const slides = document.querySelectorAll('#slider-container-2 .slide');
 
-    relatedLinks.forEach(link => {
-        link.addEventListener("click", function (event) {
-            event.preventDefault(); // Ngăn chặn hành vi mặc định của thẻ a
+function showSlide(index) {
+  if (index < 0) index = slides.length - 1;
+  if (index >= slides.length) index = 0;
 
-            const productData = {
-                name: this.getAttribute("data-name"),
-                price: this.getAttribute("data-price"),
-                img: this.getAttribute("data-img"),
-                desc: this.getAttribute("data-desc")
-            };
+  slides.forEach((slide, i) => {
+    slide.style.display = i === index ? 'block' : 'none';
+  });
 
-            localStorage.setItem("selectedProduct", JSON.stringify(productData));
-            window.location.href = this.getAttribute("href"); // Chuyển hướng đến trang chi tiết
-        });
-    });
-});
+  currentSlide = index;
+}
+
+function nextSlide() {
+  showSlide(currentSlide + 1);
+}
+
+function prevSlide() {
+  showSlide(currentSlide - 1);
+}
+
+// Hiển thị slide đầu tiên khi tải trang
+showSlide(0);
 
 

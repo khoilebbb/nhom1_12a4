@@ -18,58 +18,48 @@ closeMenuButton.addEventListener('click', () => {
     }, 500); // Đồng bộ thời gian hiệu ứng
 });
 
-// Danh sách các trái cây để tìm kiếm
-const fruits = [
-    "Táo",
-    "Cam",
-    "Xoài",
-    "Chuối",
-    "Dưa hấu",
-    "Ổi",
-    "Dứa",
-    "Lê",
-    "Bưởi",
-    "Dâu tây", "Sau rieng"
-];
 
-function searchItems() {
-    // Lấy giá trị từ thanh tìm kiếm
-    const input = document.getElementById("searchInput").value.toLowerCase();
-    const results = fruits.filter((fruit) =>
-        fruit.toLowerCase().includes(input)
-    );
-
-    // Hiển thị kết quả tìm kiếm
-    const resultDiv = document.getElementById("searchResults");
-    if (results.length > 0) {
-        resultDiv.innerHTML = `<p>Kết quả tìm kiếm:</p><ul>${results
-            .map((fruit) => `<li>${fruit}</li>`)
-            .join("")}</ul>`;
-    } else {
-        resultDiv.innerHTML = `<p>Không tìm thấy kết quả phù hợp.</p>`;
-    }
-}
-
-document.addEventListener("DOMContentLoaded", function() {
-    var username = localStorage.getItem("username"); // Lấy username từ LocalStorage
-    var loginBtn = document.getElementById("login-btn");
-    var usernameDisplay = document.getElementById("username-display");
-    var logoutBtn = document.getElementById("logout-btn");
+document.addEventListener("DOMContentLoaded", function () {
+    const username = localStorage.getItem("username");
+    const loginBtn = document.getElementById("login-btn");
+    const usernameDisplay = document.getElementById("username-display");
+    const logoutBtn = document.getElementById("logout-btn");
 
     if (username) {
         // Nếu đã đăng nhập, ẩn nút đăng nhập & hiển thị tên + nút đăng xuất
         loginBtn.style.display = "none";
-        usernameDisplay.textContent =username;
+        usernameDisplay.textContent = `${username}`;
         usernameDisplay.style.display = "inline-block";
         logoutBtn.style.display = "inline-block";
-       
-}
-    
+    } else {
+        // Nếu chưa đăng nhập, chỉ hiện nút đăng nhập
+        loginBtn.style.display = "inline-block";
+        usernameDisplay.style.display = "none";
+        logoutBtn.style.display = "none";
+    }
+
     // Xử lý đăng xuất
-    logoutBtn.addEventListener("click", function() {
+    logoutBtn.addEventListener("click", function () {
         localStorage.removeItem("username"); // Xóa thông tin đăng nhập
         alert("Bạn đã đăng xuất!");
-        window.location.reload(); // Tải lại trang
+        window.location.reload(); // Tải lại trang để cập nhật giao diện
     });
 });
 
+// Menu Toggle
+document.querySelector('.menu-toggle').addEventListener('click', function () {
+    document.querySelector('.mobile-menu-overlay').style.display = 'block';
+});
+
+document.querySelector('.close-menu').addEventListener('click', function () {
+    document.querySelector('.mobile-menu-overlay').style.display = 'none';
+});
+
+// script_menu.js
+document.querySelector('.menu-toggle').addEventListener('click', function() {
+    document.querySelector('.mobile-menu-overlay').style.display = 'block';
+});
+
+document.querySelector('.close-menu').addEventListener('click', function() {
+    document.querySelector('.mobile-menu-overlay').style.display = 'none';
+});
